@@ -433,8 +433,9 @@ GET /api/v1/sports
 [
   {
     "id": 1,
-    "name": "Football",
-    "code": "FOOTBALL",
+    "name": "Futebol",
+    "slug": "futebol",
+    "description": "O futebol é...",
     "active": true
   }
 ]
@@ -455,8 +456,9 @@ GET /api/v1/sport/{sportId}
 ```json
 {
   "id": 1,
-  "name": "Football",
-  "code": "FOOTBALL",
+  "name": "Futebol",
+  "slug": "futebol",
+  "description": "O futebol é...",
   "active": true
 }
 ```
@@ -474,7 +476,7 @@ POST /api/v1/sport
 ```json
 {
   "name": "Football",
-  "code": "FOOTBALL"
+  "description": "O futebol é..."
 }
 ```
 
@@ -483,8 +485,9 @@ POST /api/v1/sport
 ```json
 {
   "id": 1,
-  "name": "Football",
-  "code": "FOOTBALL",
+  "name": "Futebol",
+  "slug": "futebol",
+  "description": "O futebol é...",
   "active": true
 }
 ```

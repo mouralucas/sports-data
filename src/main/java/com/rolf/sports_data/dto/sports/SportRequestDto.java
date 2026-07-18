@@ -1,9 +1,9 @@
-package com.rolf.sports_data.dto;
+package com.rolf.sports_data.dto.sports;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-public class CreateSportRequest {
+public class SportRequestDto {
 
     @NotBlank
     @Size(min = 1, max = 150)
