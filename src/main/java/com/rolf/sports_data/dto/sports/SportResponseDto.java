@@ -5,10 +5,11 @@ import jakarta.validation.constraints.Size;
 
 public class SportResponseDto {
 
-    public SportResponseDto(@NotBlank Long id, @NotBlank @Size(min = 1, max = 150) String name,
+    public SportResponseDto(@NotBlank Long id, @NotBlank @Size(min = 1, max = 150) String name, String slug,
             @Size(max = 200, message = "Description cannot exceed 200 characters") String description, boolean status) {
         this.id = id;
         this.name = name;
+        this.slug = slug;
         this.description = description;
         this.active = status;
     }
@@ -19,6 +20,8 @@ public class SportResponseDto {
     @NotBlank
     @Size(min = 1, max = 150)
     private String name;
+
+    private String slug;
 
     @Size(max = 200, message = "Description cannot exceed 200 characters")
     private String description;
@@ -40,6 +43,14 @@ public class SportResponseDto {
 
     public void setName(@NotBlank @Size(min = 1, max = 150) String name) {
         this.name = name;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 
     public @Size(max = 200, message = "Description cannot exceed 200 characters") String getDescription() {

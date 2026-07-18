@@ -18,6 +18,7 @@ public final class SportMapper {
         return new SportResponseDto(
                 entity.getId(),
                 entity.getName(),
+                entity.getSlug(),
                 entity.getDescription(),
                 entity.isActive()
             );
