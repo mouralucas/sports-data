@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot: sport_data",
+      "request": "launch",
+      "mainClass": "com.rolf.sports_data.SportsDataApplication",
+      "projectName": "sports_data",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "DATABASE_URL": "jdbc:postgresql://localhost:6432/sport_data_dev_db",
+        "DATABASE_USERNAME": "dev-user",
+        "DATABASE_PASSWORD": "password"
+      }
+    }
+  ]
+}
