@@ -3,13 +3,14 @@ package com.rolf.sports_data.dto.sports;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-public class SportResponsetDto {
+public class SportResponseDto {
 
-    public SportResponsetDto(@NotBlank Long id, @NotBlank @Size(min = 1, max = 150) String name,
-            @Size(max = 200, message = "Description cannot exceed 200 characters") String description) {
+    public SportResponseDto(@NotBlank Long id, @NotBlank @Size(min = 1, max = 150) String name,
+            @Size(max = 200, message = "Description cannot exceed 200 characters") String description, boolean status) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.active = status;
     }
 
     @NotBlank
@@ -21,6 +22,9 @@ public class SportResponsetDto {
 
     @Size(max = 200, message = "Description cannot exceed 200 characters")
     private String description;
+
+    @NotBlank
+    private boolean active;
 
     public @NotBlank Long getId() {
         return id;
@@ -45,5 +49,13 @@ public class SportResponsetDto {
     public void setDescription(
             @Size(max = 200, message = "Description cannot exceed 200 characters") String description) {
         this.description = description;
+    }
+
+    public @NotBlank boolean getActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
