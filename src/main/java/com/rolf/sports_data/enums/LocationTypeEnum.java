@@ -1,19 +1,16 @@
 package com.rolf.sports_data.enums;
 
-public enum VenueTypeEnum {
-
-    STADIUM("stadium", "Estádio"),
-    CIRCUIT("circuit", "Aotódomo"),
-    ARENA("arena", "Arena"),
-    GYMNASIUM("gymnasium", "Ginásio"),
-    COURT("court", "Court"),
-    TRACK("track", "Pista"),
+public enum LocationTypeEnum {
+    COUNTRY("country", "País"),
+    STATE("state", "Estado"),
+    CITY("city", "Cidade"),
+    REGION("region", "Região"),
     OTHER("other", "Outro");
 
     private final String code;
     private final String description;
 
-    VenueTypeEnum(String code, String description) {
+    LocationTypeEnum(String code, String description) {
         this.code = code;
         this.description = description;
     }
