@@ -11,7 +11,7 @@ public class VenueResponseDto {
             Integer lengthMeters, @NotBlank Boolean active) {
         this.id = id;
         this.name = name;
-        this.venueType = venueType;‚
+        this.venueType = venueType;
         this.capacity = capacity;
         this.lengthMeters = lengthMeters;
         this.active = active;

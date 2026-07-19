@@ -3,8 +3,12 @@ package com.rolf.sports_data.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.rolf.sports_data.enums.ParticipantTypeEnum;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -17,8 +21,9 @@ public class ParticipantEntity extends BaseEntity {
     @JoinColumn(name = "sport_id")
     private SportEntity sport;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "participant_type", length = 50)
-    private String participantType; // enum
+    private ParticipantTypeEnum participantType;
 
     @Column(name = "name", length = 200)
     private String name;
