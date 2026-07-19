@@ -23,7 +23,6 @@ public class SportResponseDto {
 
     private String slug;
 
-    @Size(max = 200, message = "Description cannot exceed 200 characters")
     private String description;
 
     @NotBlank

@@ -21,12 +21,12 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping(ApiRoutes.API_V1)
-public class SportsController {
+public class SportController {
 
     private final SportService sportService;
 
     @Autowired
-    public SportsController(SportService sportService) {
+    public SportController(SportService sportService) {
         this.sportService = sportService;
     }
 
