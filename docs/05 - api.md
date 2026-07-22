@@ -978,14 +978,11 @@ POST /api/v1/competition-template
 
 ```json
 {
+  "id": 20,
   "competitionId": 10,
   "name": "World Cup Modern Format",
-  "engineType": "HYBRID",
-  "configuration": {
-    "groupCount": 12,
-    "qualifiedPerGroup": 2,
-    "bestThirdPlaces": 8
-  },
+  "version": 2,
+  "description": "FIFA World Cup format from 2026 onwards",
   "active": true
 }
 ```
@@ -997,12 +994,8 @@ POST /api/v1/competition-template
   "id": 20,
   "competitionId": 10,
   "name": "World Cup Modern Format",
-  "engineType": "HYBRID",
-  "configuration": {
-    "groupCount": 12,
-    "qualifiedPerGroup": 2,
-    "bestThirdPlaces": 8
-  },
+  "version": 2,
+  "description": "FIFA World Cup format from 2026 onwards",
   "active": true
 }
 ```

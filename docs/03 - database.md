@@ -1074,11 +1074,11 @@ CompetitionEngine
 
 ---
 
-# 21. competition_rule
+# 21. competition_templete_rule
 
 ## Responsabilidade
 
-Representa o regulamento utilizado por uma Competition.
+Representa o regulamento utilizado por uma Competition (global) ou Stage da competição.
 
 As regras são interpretadas pela CompetitionEngine.
 
@@ -1104,6 +1104,8 @@ BaseEntity
 | scope_type | VARCHAR(20) | Não | TEMPLATE ou EDITION |
 | competition_template_id | BIGINT | Sim | FK |
 | competition_edition_id | BIGINT | Sim | FK |
+| competition_stage_template_id | BIGINT | Sim | FK |
+| rule_type | ENUM | Não | Tipo de regra |
 | rule_version | INTEGER | Não | |
 | configuration | JSONB | Não | Configuração da engine |
 | description | TEXT | Sim | |
@@ -1155,9 +1157,11 @@ competition_template_id NULL
 ## Índices
 
 ```
-idx_competition_rule_template
+idx_competition_template_rule_competition_template
 
-idx_competition_rule_edition
+idx_competition_template_rule_competition_stage_template
+
+idx_competition_templete_rule_edition
 ```
 
 ---
@@ -3670,7 +3674,7 @@ Novos tipos não devem exigir alteração estrutural no banco.
 
 ---
 
-# 64. participant_relation
+# 64. participant_membership
 
 ## Responsabilidade
 
@@ -3739,9 +3743,9 @@ BaseEntity
 | Coluna | Tipo | Null | Observação |
 |---|---|---|---|
 | id | BIGINT | Não | PK |
-| source_participant_id | BIGINT | Não | Participante origem |
-| target_participant_id | BIGINT | Não | Participante destino |
-| relation_type | VARCHAR(50) | Não | Enum |
+| parent_participant_id | BIGINT | Não | Participante origem |
+| child_participant_id | BIGINT | Não | Participante destino |
+| membership_type | VARCHAR(50) | Não | Enum |
 | valid_from | DATE | Sim | Início da relação |
 | valid_until | DATE | Sim | Fim da relação |
 
@@ -3764,11 +3768,11 @@ ck_relation_different_participants
 ## Índices
 
 ```
-idx_relation_source
+idx_participant_membership_parent_participant
 
-idx_relation_target
+idx_participant_membership_child_participant
 
-idx_relation_type
+idx_participant_membership_membership_type
 ```
 
 ---
