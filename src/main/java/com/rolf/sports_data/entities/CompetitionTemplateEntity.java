@@ -35,5 +35,5 @@ public class CompetitionTemplateEntity extends BaseEntity {
     private List<CompetitionStageTemplateEntity> competitionStageTemplates = new ArrayList<>();
 
     @OneToMany(mappedBy = "competitionTemplate")
-    private List<CompetitionRuleEntity> competitionRules = new ArrayList<>();
+    private List<CompetitionTemplateRuleEntity> competitionRules = new ArrayList<>();
 }
