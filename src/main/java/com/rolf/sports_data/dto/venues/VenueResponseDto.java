@@ -1,7 +1,5 @@
 package com.rolf.sports_data.dto.venues;
 
-import com.rolf.sports_data.enums.VenueTypeEnum;
-
 import jakarta.validation.constraints.NotBlank;
 
 public class VenueResponseDto {

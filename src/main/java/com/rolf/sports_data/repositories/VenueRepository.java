@@ -6,6 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.rolf.sports_data.entities.VenueEntity;
 
-public interface VenueRepository extends JpaRepository<VenueEntity, Long>{
-    List<VenueEntity> findAll();
+public interface VenueRepository extends JpaRepository<VenueEntity, Long> {
 }
