@@ -8,7 +8,7 @@ import com.rolf.sports_data.entities.SportEntity;
 
 public final class SportMapper {
 
-    private SportMapper() {
+    public SportMapper() {
     }
 
     /**

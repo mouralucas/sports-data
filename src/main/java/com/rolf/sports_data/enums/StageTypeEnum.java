@@ -2,11 +2,10 @@ package com.rolf.sports_data.enums;
 
 public enum StageTypeEnum {
 
-    GROUP("group", "Group"),
-    LEAGUE("league", "League"),
-    ROUND_ROBIN("round_robin", "Round Robin"),
-    KNOCKOUT("knockout", "Knockout"),
-    QUALIFICATION("qualification", "Qualification"),
+    GROUP_STAGE("group", "Group"),
+    LEAGUE_STAGE("league", "League"),
+    KNOCKOUT_STAGE("knockout", "Knockout"),
+    QUALIFICATION_STAGE("qualification", "Qualification"),
     CUSTOM("custom", "Custom");
 
     private final String code;

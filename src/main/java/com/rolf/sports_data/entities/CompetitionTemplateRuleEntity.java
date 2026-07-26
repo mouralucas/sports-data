@@ -50,4 +50,69 @@ public class CompetitionTemplateRuleEntity extends BaseEntity {
 
     @Column(name = "description", columnDefinition = "TEXT", nullable = true)
     private String description;
+
+    /* Setters and Getters */
+    public String getScopeType() {
+        return scopeType;
+    }
+
+    public void setScopeType(String scopeType) {
+        this.scopeType = scopeType;
+    }
+
+    public CompetitionTemplateEntity getCompetitionTemplate() {
+        return competitionTemplate;
+    }
+
+    public void setCompetitionTemplate(CompetitionTemplateEntity competitionTemplate) {
+        this.competitionTemplate = competitionTemplate;
+    }
+
+    public CompetitionEditionEntity getCompetitionEdition() {
+        return competitionEdition;
+    }
+
+    public void setCompetitionEdition(CompetitionEditionEntity competitionEdition) {
+        this.competitionEdition = competitionEdition;
+    }
+
+    public CompetitionStageTemplateEntity getCompetitionStageTemplate() {
+        return competitionStageTemplate;
+    }
+
+    public void setCompetitionStageTemplate(CompetitionStageTemplateEntity competitionStageTemplate) {
+        this.competitionStageTemplate = competitionStageTemplate;
+    }
+
+    public CompetitionRuleTypeEnum getRuleType() {
+        return ruleType;
+    }
+
+    public void setRuleType(CompetitionRuleTypeEnum ruleType) {
+        this.ruleType = ruleType;
+    }
+
+    public Integer getRuleVersion() {
+        return ruleVersion;
+    }
+
+    public void setRuleVersion(Integer ruleVersion) {
+        this.ruleVersion = ruleVersion;
+    }
+
+    public Map<String, Object> getConfiguration() {
+        return configuration;
+    }
+
+    public void setConfiguration(Map<String, Object> configuration) {
+        this.configuration = configuration;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

@@ -22,8 +22,8 @@ public class CompetitionTemplateEntity extends BaseEntity {
     @Column(name = "name", length = 200)
     private String name;
 
-    @Column(name = "version")
-    private Integer version;
+    @Column(name = "template_version")
+    private Integer template_version;
 
     @Column(name = "description", columnDefinition = "TEXT", nullable = true)
     private String description;
@@ -36,4 +36,62 @@ public class CompetitionTemplateEntity extends BaseEntity {
 
     @OneToMany(mappedBy = "competitionTemplate")
     private List<CompetitionTemplateRuleEntity> competitionRules = new ArrayList<>();
+
+    /* Setters and Getters */
+    public CompetitionEntity getCompetition() {
+        return competition;
+    }
+
+    public void setCompetition(CompetitionEntity competition) {
+        this.competition = competition;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getTemplateVersion() {
+        return template_version;
+    }
+
+    public void setTemplateVersion(Integer version) {
+        this.template_version = version;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public List<CompetitionStageTemplateEntity> getCompetitionStageTemplates() {
+        return competitionStageTemplates;
+    }
+
+    public void setCompetitionStageTemplates(List<CompetitionStageTemplateEntity> competitionStageTemplates) {
+        this.competitionStageTemplates = competitionStageTemplates;
+    }
+
+    public List<CompetitionTemplateRuleEntity> getCompetitionRules() {
+        return competitionRules;
+    }
+
+    public void setCompetitionRules(List<CompetitionTemplateRuleEntity> competitionRules) {
+        this.competitionRules = competitionRules;
+    }
+
 }

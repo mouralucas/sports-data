@@ -7,6 +7,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+@Deprecated
 @Entity
 @Table(name = "stage_slot_template",
     indexes = {
@@ -34,4 +35,54 @@ public class StageSlotTemplateEntity extends BaseEntity {
 
     @Column(name = "description", columnDefinition = "TEXT", nullable = true)
     private String description;
+
+    public CompetitionStageTemplateEntity getCompetitionStageTemplate() {
+        return competitionStageTemplate;
+    }
+
+    public void setCompetitionStageTemplate(CompetitionStageTemplateEntity competitionStageTemplate) {
+        this.competitionStageTemplate = competitionStageTemplate;
+    }
+
+    public Integer getSlotOrder() {
+        return slotOrder;
+    }
+
+    public void setSlotOrder(Integer slotOrder) {
+        this.slotOrder = slotOrder;
+    }
+
+    public String getSlotType() {
+        return slotType;
+    }
+
+    public void setSlotType(String slotType) {
+        this.slotType = slotType;
+    }
+
+    public CompetitionStageTemplateEntity getSourceStageTemplate() {
+        return sourceStageTemplate;
+    }
+
+    public void setSourceStageTemplate(CompetitionStageTemplateEntity sourceStageTemplate) {
+        this.sourceStageTemplate = sourceStageTemplate;
+    }
+
+    public Integer getSourcePosition() {
+        return sourcePosition;
+    }
+
+    public void setSourcePosition(Integer sourcePosition) {
+        this.sourcePosition = sourcePosition;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
 }

@@ -47,4 +47,77 @@ public class CompetitionStageTemplateEntity extends BaseEntity {
     @OneToMany(mappedBy = "competitionStageTemplate")
     private List<CompetitionEventTemplateEntity> competitionEventTemplates = new ArrayList<>();
 
+    public CompetitionTemplateEntity getCompetitionTemplate() {
+        return competitionTemplate;
+    }
+
+    public void setCompetitionTemplate(CompetitionTemplateEntity competitionTemplate) {
+        this.competitionTemplate = competitionTemplate;
+    }
+
+    public CompetitionStageTemplateEntity getParentStageTemplate() {
+        return parent_stage_template;
+    }
+
+    public void setParent_stage_template(CompetitionStageTemplateEntity parent_stage_template) {
+        this.parent_stage_template = parent_stage_template;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getStageType() {
+        return stageType;
+    }
+
+    public void setStageType(String stageType) {
+        this.stageType = stageType;
+    }
+
+    public Integer getDisplayOrder() {
+        return displayOrder;
+    }
+
+    public void setDisplayOrder(Integer displayOrder) {
+        this.displayOrder = displayOrder;
+    }
+
+    public Integer getExpectedParticipants() {
+        return expectedParticipants;
+    }
+
+    public void setExpectedParticipants(Integer expectedParticipants) {
+        this.expectedParticipants = expectedParticipants;
+    }
+
+    public Integer getExpectedEvents() {
+        return expectedEvents;
+    }
+
+    public void setExpectedEvents(Integer expectedEvents) {
+        this.expectedEvents = expectedEvents;
+    }
+
+    public List<StageSlotTemplateEntity> getStageSlotTemplates() {
+        return stageSlotTemplates;
+    }
+
+    public void setStageSlotTemplates(List<StageSlotTemplateEntity> stageSlotTemplates) {
+        this.stageSlotTemplates = stageSlotTemplates;
+    }
+
+    public List<CompetitionEventTemplateEntity> getCompetitionEventTemplates() {
+        return competitionEventTemplates;
+    }
+
+    public void setCompetitionEventTemplates(List<CompetitionEventTemplateEntity> competitionEventTemplates) {
+        this.competitionEventTemplates = competitionEventTemplates;
+    }
+
+    
 }
