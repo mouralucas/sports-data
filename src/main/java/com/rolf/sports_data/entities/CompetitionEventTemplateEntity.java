@@ -22,36 +22,20 @@ import jakarta.persistence.Table;
 })
 public class CompetitionEventTemplateEntity extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "competition_stage_template_id")
     private CompetitionStageTemplateEntity competitionStageTemplate;
 
-    @Column(name = "event_order")
     private Integer eventOrder;
 
-    @Column(name = "name", length = 200, nullable = true)
     private String name;
 
-    @Column(name = "event_type", length = 40)
-    private String eventType;
+    private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "home_slot_template_id", nullable = true)
-    private StageSlotTemplateEntity homeSlotTemplateId;
+    // REMOVIDO
+    // private StageSlotTemplateEntity homeSlotTemplate;
 
-    @ManyToOne
-    @JoinColumn(name = "away_slot_template_id", nullable = true)
-    private StageSlotTemplateEntity awaySlotTemplateId;
+    // REMOVIDO
+    // private StageSlotTemplateEntity awaySlotTemplate;
 
-    @ManyToOne
-    @JoinColumn(name = "venue_id", nullable = true)
-    private VenueEntity venueId;
-
-    @Column(name = "configuration", columnDefinition = "jsonb")
-    @JdbcTypeCode(SqlTypes.JSON)
-    private Map<String, Object> configuration;
-
-    @OneToMany(mappedBy = "competitionEventTemplate")
-    private List<CompetitionEventEntity> competitionEvents = new ArrayList<>();
+    private List<CompetitionEventParticipantTemplateEntity> participants;
 
 }
