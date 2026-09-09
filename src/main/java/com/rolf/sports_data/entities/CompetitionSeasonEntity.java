@@ -18,7 +18,7 @@ public class CompetitionSeasonEntity extends BaseEntity {
 
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "competition_id", nullable = false)
-    private CompetitionEntity competition;
+    private RaceCompetitionEntity competition;
 
     @Column(name = "start_date", nullable = true)
     private LocalDateTime startDate;

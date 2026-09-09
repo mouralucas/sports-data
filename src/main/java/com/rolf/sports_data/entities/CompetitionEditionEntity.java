@@ -21,15 +21,11 @@ import jakarta.persistence.Table;
 public class CompetitionEditionEntity extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "competition_id")
-    private CompetitionEntity competition;
+    private RaceCompetitionEntity competition;
 
     @ManyToOne
     @JoinColumn(name = "competition_template_id")
     private CompetitionTemplateEntity competitionTemplate;
-
-    @ManyToOne
-    @JoinColumn(name = "competition_engine_id")
-    private CompetitionEngineEntity competitionEngine;
 
     @Column(name = "name", length = 200)
     private String name;
@@ -56,11 +52,5 @@ public class CompetitionEditionEntity extends BaseEntity {
     private List<CompetitionStageEntity> competitionStages = new ArrayList<>();
 
     @OneToMany(mappedBy = "competitionEdition")
-    private List<CompetitionEntryEntity> competitionEntries = new ArrayList<>();
-
-    @OneToMany(mappedBy = "competitionEdition")
     private List<CompetitionEventEntity> competitionEvents = new ArrayList<>();
-
-    @OneToMany(mappedBy = "competitionEdition")
-    private List<ClassificationEntity> classifications = new ArrayList<>();
 }

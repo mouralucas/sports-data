@@ -1,15 +1,12 @@
 package com.rolf.sports_data.entities;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -50,12 +47,6 @@ public class CompetitionEventEntity extends BaseEntity {
     @Column(name = "started_at", nullable = true)
     private LocalDateTime startedAt;
 
-    @Column(name = "finished_at", nullable = true)
-    private LocalDateTime finishedAt;
-
-    @OneToMany(mappedBy = "competitionEvent")
-    private List<CompetitionEventParticipantEntity> competitionEventParticipants = new ArrayList<>();
-
-    @OneToMany(mappedBy = "competitionEvent")
-    private List<EventActionEntity> eventActions = new ArrayList<>();
+    @Column(name = "end_at", nullable = true)
+    private LocalDateTime endAt;
 }

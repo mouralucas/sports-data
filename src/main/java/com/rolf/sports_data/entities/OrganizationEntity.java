@@ -25,7 +25,7 @@ public class OrganizationEntity extends BaseEntity {
     private OrganizationEntity parentOrganization;
 
     @OneToMany(mappedBy = "organization")
-    private List<CompetitionEntity> competitions = new ArrayList<>();
+    private List<RaceCompetitionEntity> competitions = new ArrayList<>();
 
     @OneToMany(mappedBy = "parentOrganization")
     private List<OrganizationEntity> childOrganizations = new ArrayList<>();

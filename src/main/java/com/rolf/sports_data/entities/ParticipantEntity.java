@@ -102,9 +102,4 @@ public class ParticipantEntity extends BaseEntity {
     public void setStatus(boolean status) {
         this.status = status;
     }
-
-    // @OneToMany(mappedBy = "participant")
-    // private List<CompetitionEntryEntity> competitionEntries = new ArrayList<>();
-
-    
 }

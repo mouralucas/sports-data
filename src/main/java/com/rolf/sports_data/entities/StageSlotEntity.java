@@ -19,14 +19,6 @@ public class StageSlotEntity extends BaseEntity {
     @JoinColumn(name = "competition_stage_id")
     private CompetitionStageEntity competitionStage;
 
-    @ManyToOne
-    @JoinColumn(name = "stage_slot_template_id")
-    private StageSlotTemplateEntity stageSlotTemplate;
-
-    @ManyToOne
-    @JoinColumn(name = "competition_entry_id", nullable = true)
-    private CompetitionEntryEntity competitionEntry;
-
     @Column(name = "slot_order")
     private Integer slotOrder;
 }
