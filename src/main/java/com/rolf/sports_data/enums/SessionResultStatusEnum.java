@@ -1,10 +1,11 @@
 package com.rolf.sports_data.enums;
 
 public enum SessionResultStatusEnum {
-    FINISHED("FINISHED", "Finished"),
+    POINTS("POINTS", "Points"),
     TIME_TOTAL("DNF", "Do not finish"),
     TIME_PARTIAL("DNS", "Do not start"),
-    TIME_UNKNOWN("UNKNOWN", "Unknown"),;
+    TIME_UNKNOWN("UNKNOWN", "Unknown"),
+    FINISHED("FINISHED", "Finished");
 
     private final String code;
     private final String description;

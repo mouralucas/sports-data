@@ -1,5 +1,7 @@
 package com.rolf.sports_data.entities;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,10 +21,10 @@ public class CompetitionSeasonEntity extends BaseEntity {
     private CompetitionEntity competition;
 
     @Column(name = "start_date", nullable = true)
-    private String startDate;
+    private LocalDateTime startDate;
 
     @Column(name = "end_date", nullable = true)
-    private String endDate;
+    private LocalDateTime endDate;
 
     @Column(name = "description", columnDefinition = "TEXT", nullable = true)
     private String description;
