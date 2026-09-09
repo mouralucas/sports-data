@@ -1,4 +1,4 @@
-package com.rolf.sports_data.dto.CompetitionStageTemplate;
+package com.rolf.sports_data.dto.competitionStageTemplate;
 
 import jakarta.validation.constraints.NotNull;
 

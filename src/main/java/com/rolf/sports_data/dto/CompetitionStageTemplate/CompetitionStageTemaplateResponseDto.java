@@ -1,8 +1,8 @@
-package com.rolf.sports_data.dto.CompetitionStageTemplate;
+package com.rolf.sports_data.dto.competitionStageTemplate;
 
 import java.util.List;
 
-import com.rolf.sports_data.dto.StageSlotTemplate.StageSlotTemplateDto;
+import com.rolf.sports_data.dto.stageSlotTemplate.StageSlotTemplateDto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

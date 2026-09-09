@@ -7,7 +7,7 @@ public enum ParticipantTypeEnum {
     PLAYER("player", "Jogador"),
     DRIVER("driver", "Piloto"),
     CAR("car", "Carro"),
-    CONTRUCTOR("contructor", "Construtor"),
+    CONSTRUCTOR("constructor", "Construtor"),
     ATHLETE("athlete", "Atleta"),
     COMPETITOR("competitor", "Competidor"),
     OTHER("other", "Outro");

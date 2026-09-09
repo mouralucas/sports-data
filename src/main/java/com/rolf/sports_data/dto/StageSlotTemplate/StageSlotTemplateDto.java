@@ -1,4 +1,4 @@
-package com.rolf.sports_data.dto.StageSlotTemplate;
+package com.rolf.sports_data.dto.stageSlotTemplate;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

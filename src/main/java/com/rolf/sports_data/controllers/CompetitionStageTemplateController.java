@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rolf.sports_data.api.ApiRoutes;
-import com.rolf.sports_data.dto.CompetitionStageTemplate.CompetitionStageTemaplateRequestDto;
-import com.rolf.sports_data.dto.CompetitionStageTemplate.CompetitionStageTemaplateResponseDto;
+import com.rolf.sports_data.dto.competitionStageTemplate.CompetitionStageTemaplateRequestDto;
+import com.rolf.sports_data.dto.competitionStageTemplate.CompetitionStageTemaplateResponseDto;
 import com.rolf.sports_data.services.CompetitionStageTemplateService;
 
 import jakarta.validation.Valid;

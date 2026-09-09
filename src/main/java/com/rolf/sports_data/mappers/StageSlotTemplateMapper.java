@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.rolf.sports_data.dto.StageSlotTemplate.StageSlotTemplateDto;
+import com.rolf.sports_data.dto.stageSlotTemplate.StageSlotTemplateDto;
 import com.rolf.sports_data.entities.StageSlotTemplateEntity;
 
 @Component

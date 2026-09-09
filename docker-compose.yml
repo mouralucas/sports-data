@@ -12,5 +12,19 @@ services:
     volumes:
       - sports-data:/var/lib/postgresql/data:cached
 
+  pg_sports_2:
+    container_name: 'pg_sports_data_2'
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: dev-user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sport_data_dev_db_2
+    ports:
+      - "6433:5433"
+    volumes:
+      - sports-data-2:/var/lib/postgresql/data:cached
+
 volumes:
   sports-data:
+  sports-data-2:

@@ -7,7 +7,6 @@ import com.rolf.sports_data.enums.VenueTypeEnum;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "venue")
 public class VenueEntity extends BaseEntity {
@@ -34,10 +33,7 @@ public class VenueEntity extends BaseEntity {
     @OneToMany(mappedBy = "venue")
     private List<CompetitionEventEntity> competitionEvents = new ArrayList<>();
 
-    @OneToMany(mappedBy = "venueId")
-    private List<CompetitionEventTemplateEntity> competitionEventTemplates = new ArrayList<>();
-
-     /* Setters and Getters */
+    /* Setters and Getters */
     public LocationEntity getLocation() {
         return location;
     }
@@ -94,13 +90,4 @@ public class VenueEntity extends BaseEntity {
         this.competitionEvents = competitionEvents;
     }
 
-    public List<CompetitionEventTemplateEntity> getCompetitionEventTemplates() {
-        return competitionEventTemplates;
-    }
-
-    public void setCompetitionEventTemplates(List<CompetitionEventTemplateEntity> competitionEventTemplates) {
-        this.competitionEventTemplates = competitionEventTemplates;
-    }
-
-    
 }

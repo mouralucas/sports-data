@@ -13,7 +13,7 @@ public class OrganizationController {
 
     @GetMapping("/organization/{id}")
     public String getOrganizationById(@PathVariable Long id) {
-        return "Em contrução";
+        return "Em construção";
     } 
 
     public void getOrganizations() {

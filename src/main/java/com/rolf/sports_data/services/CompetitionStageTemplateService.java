@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.rolf.sports_data.dto.CompetitionStageTemplate.CompetitionStageTemaplateResponseDto;
+import com.rolf.sports_data.dto.competitionStageTemplate.CompetitionStageTemaplateResponseDto;
 import com.rolf.sports_data.entities.CompetitionStageTemplateEntity;
 import com.rolf.sports_data.mappers.CompetitionStageTemaplateMapper;
 import com.rolf.sports_data.repositories.CompetitionStageTemplateRepository;

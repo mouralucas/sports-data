@@ -1,8 +1,5 @@
 package com.rolf.sports_data.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.rolf.sports_data.enums.ParticipantTypeEnum;
 
 import jakarta.persistence.Column;
@@ -11,12 +8,21 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "participant")
 public class ParticipantEntity extends BaseEntity {
+
+    
+    public ParticipantEntity(ParticipantTypeEnum participantType, String name, String shortName,
+            String acronym, LocationEntity countryLocation, boolean status) {
+        this.participantType = participantType;
+        this.name = name;
+        this.shortName = shortName;
+        this.acronym = acronym;
+    }
+
     @ManyToOne
     @JoinColumn(name = "sport_id")
     private SportEntity sport;
@@ -39,8 +45,66 @@ public class ParticipantEntity extends BaseEntity {
     private LocationEntity countryLocation;
 
     @Column(name = "status")
-    private boolean status;
+    private boolean status = true;
 
-    @OneToMany(mappedBy = "participant")
-    private List<CompetitionEntryEntity> competitionEntries = new ArrayList<>();
+    public SportEntity getSport() {
+        return sport;
+    }
+
+    public void setSport(SportEntity sport) {
+        this.sport = sport;
+    }
+
+    public ParticipantTypeEnum getParticipantType() {
+        return participantType;
+    }
+
+    public void setParticipantType(ParticipantTypeEnum participantType) {
+        this.participantType = participantType;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public String getAcronym() {
+        return acronym;
+    }
+
+    public void setAcronym(String acronym) {
+        this.acronym = acronym;
+    }
+
+    public LocationEntity getCountryLocation() {
+        return countryLocation;
+    }
+
+    public void setCountryLocation(LocationEntity countryLocation) {
+        this.countryLocation = countryLocation;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    // @OneToMany(mappedBy = "participant")
+    // private List<CompetitionEntryEntity> competitionEntries = new ArrayList<>();
+
+    
 }

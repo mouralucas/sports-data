@@ -22,9 +22,9 @@ public class CompetitionStageEntity extends BaseEntity {
     @JoinColumn(name = "competition_edition_id")
     private CompetitionEditionEntity competitionEdition;
 
-    @ManyToOne
-    @JoinColumn(name = "competition_stage_template_id")
-    private CompetitionStageTemplateEntity competitionStageTemplate;
+    // @ManyToOne
+    // @JoinColumn(name = "competition_stage_template_id")
+    // private CompetitionStageTemplateEntity competitionStageTemplate;
 
     @ManyToOne
     @JoinColumn(name = "parent_stage_id", nullable = true)
