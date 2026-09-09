@@ -18,21 +18,17 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "competition_season_event_session_result", uniqueConstraints = {
+@Table(name = "race_competition_season_event_session_result", uniqueConstraints = {
         @UniqueConstraint(name = "uk_session_result_entry", columnNames = {
-                "competition_season_event_session_id",
-                "competition_season_event_entry_id"
+                "race_competition_season_event_session_id",
+                "race_competition_season_event_entry_id"
         })
 })
-public class CompetitionSeasonEventSessionResultEntity extends BaseEntity {
+public class RaceCompetitionSeasonEventSessionResultEntity extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "competition_season_event_session_id", nullable = false)
-    private CompetitionSeasonEventSessionEntity session;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "competition_season_event_entry_id", nullable = false)
-    private CompetitionSeasonEventEntryEntity entry;
+    @JoinColumn(name = "race_competition_season_event_session_id", nullable = false)
+    private RaceCompetitionSeasonEventSessionEntity session;
 
     @Column(name = "position")
     private Integer position;

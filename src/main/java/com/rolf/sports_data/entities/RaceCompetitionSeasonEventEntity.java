@@ -11,8 +11,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "competition_season_event")
-public class CompetitionSeasonEventEntity extends BaseEntity {
+@Table(name = "race_competition_season_event")
+public class RaceCompetitionSeasonEventEntity extends BaseEntity {
     @Column(name = "name")
     private String name;
 
@@ -22,7 +22,7 @@ public class CompetitionSeasonEventEntity extends BaseEntity {
     @Column(name = "end_date")
     private LocalDateTime endDate;
 
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    @JoinColumn(name = "competition_season_id")
-    private CompetitionSeasonEntity competitionSeason;
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @JoinColumn(name = "race_competition_season_id")
+    private RaceCompetitionSeasonEntity competitionSeason;
 }

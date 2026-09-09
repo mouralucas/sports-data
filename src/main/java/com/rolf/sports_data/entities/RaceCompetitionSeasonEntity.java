@@ -11,12 +11,12 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "competition_season")
-public class CompetitionSeasonEntity extends BaseEntity {
+@Table(name = "race_competition_season")
+public class RaceCompetitionSeasonEntity extends BaseEntity {
     @Column(name = "name", nullable = false)
     private String name; // Usually the year (2024 or 2024/2025)
 
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     @JoinColumn(name = "competition_id", nullable = false)
     private RaceCompetitionEntity competition;
 

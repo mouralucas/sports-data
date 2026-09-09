@@ -1,11 +1,14 @@
 package com.rolf.sports_data.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.rolf.sports_data.enums.VenueTypeEnum;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "venue")
@@ -29,9 +32,6 @@ public class VenueEntity extends BaseEntity {
 
     @Column(name = "active")
     private Boolean active = true;
-
-    @OneToMany(mappedBy = "venue")
-    private List<CompetitionEventEntity> competitionEvents = new ArrayList<>();
 
     /* Setters and Getters */
     public LocationEntity getLocation() {
@@ -80,14 +80,6 @@ public class VenueEntity extends BaseEntity {
 
     public void setActive(Boolean active) {
         this.active = active;
-    }
-
-    public List<CompetitionEventEntity> getCompetitionEvents() {
-        return competitionEvents;
-    }
-
-    public void setCompetitionEvents(List<CompetitionEventEntity> competitionEvents) {
-        this.competitionEvents = competitionEvents;
     }
 
 }

@@ -22,7 +22,10 @@ public class ParticipantEntity extends BaseEntity {
         this.shortName = shortName;
         this.acronym = acronym;
     }
-
+    /*
+        Participant can only be a person. So change this logic to accept all kind of people.
+        A participant can be a driver, player or any other kind of person.
+    */
     @ManyToOne
     @JoinColumn(name = "sport_id")
     private SportEntity sport;
