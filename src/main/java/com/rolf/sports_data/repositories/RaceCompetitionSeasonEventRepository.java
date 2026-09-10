@@ -8,4 +8,5 @@ import com.rolf.sports_data.entities.RaceCompetitionSeasonEventEntity;
 
 public interface RaceCompetitionSeasonEventRepository extends JpaRepository<RaceCompetitionSeasonEventEntity, Long> {
     List<RaceCompetitionSeasonEventEntity> findAllByCompetitionSeasonId(Long id);
+    List<RaceCompetitionSeasonEventEntity>  findAllByCompetitionSeasonSlug(String slug);
 }

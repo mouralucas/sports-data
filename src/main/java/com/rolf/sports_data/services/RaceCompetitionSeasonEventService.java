@@ -20,9 +20,9 @@ public class RaceCompetitionSeasonEventService {
         this.raceCompetitionSeasonEventRepository = raceCompetitionSeasonEventRepository;
     }
 
-    public List<RaceCompetitionSeasonEventResponseDto> fetchAllSeasonEvents(Long seasonId) {
+    public List<RaceCompetitionSeasonEventResponseDto> fetchAllSeasonEvents(String seasonId) {
         List<RaceCompetitionSeasonEventEntity> events = raceCompetitionSeasonEventRepository
-                .findAllByCompetitionSeasonId(seasonId);
+                .findAllByCompetitionSeasonSlug(seasonId);
 
         return RaceCompetitionSeasonEventMapper.toListResponse(events);
     }

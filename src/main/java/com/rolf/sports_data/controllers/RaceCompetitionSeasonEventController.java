@@ -26,7 +26,7 @@ public class RaceCompetitionSeasonEventController {
     // /season/f12026/events
     // /season/fe25-26/events
     @GetMapping("/season/{seasonId}/events")
-    public List<RaceCompetitionSeasonEventResponseDto> fetchAllEvents(@PathVariable Long seasonId) {
+    public List<RaceCompetitionSeasonEventResponseDto> fetchAllEvents(@PathVariable String seasonId) {
         return raceCompetitionSeasonEventService.fetchAllSeasonEvents(seasonId);
     }
 }
