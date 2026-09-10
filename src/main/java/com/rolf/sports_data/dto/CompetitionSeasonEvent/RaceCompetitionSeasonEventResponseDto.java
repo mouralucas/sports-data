@@ -2,14 +2,14 @@ package com.rolf.sports_data.dto.CompetitionSeasonEvent;
 
 import java.time.LocalDateTime;
 
-public class CompetitionSeasonEventResponse {
+public class RaceCompetitionSeasonEventResponseDto {
     private Long id;
     private String name;
     // private Long competitionSeasonId;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
-    public CompetitionSeasonEventResponse(Long id, String name, LocalDateTime startDate, LocalDateTime endDate) {
+    public RaceCompetitionSeasonEventResponseDto(Long id, String name, LocalDateTime startDate, LocalDateTime endDate) {
         this.id = id;
         this.name = name;
         this.startDate = startDate;

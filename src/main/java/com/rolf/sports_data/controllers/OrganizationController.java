@@ -12,11 +12,12 @@ import com.rolf.sports_data.api.ApiRoutes;
 public class OrganizationController {
 
     @GetMapping("/organization/{id}")
-    public String getOrganizationById(@PathVariable Long id) {
+    public String fetchOrganizationById(@PathVariable Long id) {
         return "Em construção";
-    } 
+    }
 
-    public void getOrganizations() {
-
+    @GetMapping("/organizations")
+    public String fetchAllOrganizations() {
+        return "Em construção";
     }
 }

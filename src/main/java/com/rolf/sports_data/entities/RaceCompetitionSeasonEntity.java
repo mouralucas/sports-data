@@ -28,4 +28,8 @@ public class RaceCompetitionSeasonEntity extends BaseEntity {
 
     @Column(name = "description", columnDefinition = "TEXT", nullable = true)
     private String description;
+
+    // Should be the sport short name - year of the season (start_year - end_year)
+    @Column(name = "slug", unique = true)
+    private String slug;
 }
