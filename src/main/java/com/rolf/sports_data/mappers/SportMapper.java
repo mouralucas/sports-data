@@ -30,9 +30,9 @@ public final class SportMapper {
                 .toList();
     }
 
-    public static SportEntity toEntity(SportRequestDto dto) {
+    public static SportEntity toEntity(SportRequestDto requestDto) {
         return new SportEntity(
-                dto.getName(),
-                dto.getDescription());
+                requestDto.getName(),
+                requestDto.getDescription());
     }
 }

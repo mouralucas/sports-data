@@ -1,27 +1,19 @@
-package com.rolf.sports_data.dto.CompetitionSeasonEvent;
+package com.rolf.sports_data.dto.raceCompetitionSeasonEvent;
 
 import java.time.LocalDateTime;
 
-public class RaceCompetitionSeasonEventResponseDto {
-    private Long id;
+public class RaceCompetitionSeasonEventRequest {
     private String name;
-    // private Long competitionSeasonId;
+    private Long raceCompetitionSeasonId;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-
-    public RaceCompetitionSeasonEventResponseDto(Long id, String name, LocalDateTime startDate, LocalDateTime endDate) {
-        this.id = id;
+    
+    public RaceCompetitionSeasonEventRequest(String name, Long raceCompetitionSeasonId, LocalDateTime startDate,
+            LocalDateTime endDate) {
         this.name = name;
+        this.raceCompetitionSeasonId = raceCompetitionSeasonId;
         this.startDate = startDate;
         this.endDate = endDate;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -30,6 +22,14 @@ public class RaceCompetitionSeasonEventResponseDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getRaceCompetitionSeasonId() {
+        return raceCompetitionSeasonId;
+    }
+
+    public void setRaceCompetitionSeasonId(Long raceCompetitionSeasonId) {
+        this.raceCompetitionSeasonId = raceCompetitionSeasonId;
     }
 
     public LocalDateTime getStartDate() {
@@ -48,4 +48,5 @@ public class RaceCompetitionSeasonEventResponseDto {
         this.endDate = endDate;
     }
 
+    
 }

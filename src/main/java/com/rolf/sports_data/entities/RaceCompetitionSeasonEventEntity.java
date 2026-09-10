@@ -26,6 +26,24 @@ public class RaceCompetitionSeasonEventEntity extends BaseEntity {
     @JoinColumn(name = "race_competition_season_id")
     private RaceCompetitionSeasonEntity competitionSeason;
 
+    public RaceCompetitionSeasonEventEntity() {
+    }
+
+    public RaceCompetitionSeasonEventEntity(String name, LocalDateTime startDate, LocalDateTime endDate) {
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    public RaceCompetitionSeasonEventEntity(Long id, String name, LocalDateTime startDate, LocalDateTime endDate,
+            RaceCompetitionSeasonEntity competitionSeason) {
+        super(id);
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.competitionSeason = competitionSeason;
+    }
+
     public String getName() {
         return name;
     }
@@ -50,5 +68,11 @@ public class RaceCompetitionSeasonEventEntity extends BaseEntity {
         this.endDate = endDate;
     }
 
-    
+    public RaceCompetitionSeasonEntity getCompetitionSeason() {
+        return competitionSeason;
+    }
+
+    public void setCompetitionSeason(RaceCompetitionSeasonEntity competitionSeason) {
+        this.competitionSeason = competitionSeason;
+    }
 }

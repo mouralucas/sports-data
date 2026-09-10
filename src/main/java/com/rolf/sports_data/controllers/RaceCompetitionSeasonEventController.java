@@ -5,11 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rolf.sports_data.api.ApiRoutes;
-import com.rolf.sports_data.dto.CompetitionSeasonEvent.RaceCompetitionSeasonEventResponseDto;
+import com.rolf.sports_data.dto.raceCompetitionSeasonEvent.RaceCompetitionSeasonEventRequest;
+import com.rolf.sports_data.dto.raceCompetitionSeasonEvent.RaceCompetitionSeasonEventResponseDto;
 import com.rolf.sports_data.services.RaceCompetitionSeasonEventService;
 
 @RestController
@@ -22,11 +25,13 @@ public class RaceCompetitionSeasonEventController {
         this.raceCompetitionSeasonEventService = raceCompetitionSeasonEventService;
     }
 
-    // TODO: add a slug to season so the seasonId is more readable, created automatically
-    // /season/f12026/events
-    // /season/fe25-26/events
-    @GetMapping("/season/{seasonId}/events")
-    public List<RaceCompetitionSeasonEventResponseDto> fetchAllEvents(@PathVariable String seasonId) {
-        return raceCompetitionSeasonEventService.fetchAllSeasonEvents(seasonId);
+    @GetMapping("/season/{seasonSlug}/events")
+    public List<RaceCompetitionSeasonEventResponseDto> fetchAllEvents(@PathVariable String seasonSlug) {
+        return raceCompetitionSeasonEventService.fetchAllSeasonEvents(seasonSlug);
+    }
+
+    @PostMapping("/season/event")
+    public RaceCompetitionSeasonEventResponseDto createSeasonEvent(@RequestBody RaceCompetitionSeasonEventRequest event) {
+        return raceCompetitionSeasonEventService.createSeasonEvent(event);
     }
 }
