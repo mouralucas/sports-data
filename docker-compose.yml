@@ -21,7 +21,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: sport_data_dev_db_2
     ports:
-      - "6433:5433"
+      - "6433:5432"
     volumes:
       - sports-data-2:/var/lib/postgresql/data:cached
 

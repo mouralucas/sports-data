@@ -15,13 +15,13 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "created_by")
+    @Column(name = "created_by", nullable = true)
     private UUID createdBy;
 
     @Column(name = "updated_at", nullable = true)
     private LocalDateTime updatedAt;
 
-    @Column(name = "updated_by")
+    @Column(name = "updated_by", nullable = true)
     private UUID updatedBy;
 
     @Version
