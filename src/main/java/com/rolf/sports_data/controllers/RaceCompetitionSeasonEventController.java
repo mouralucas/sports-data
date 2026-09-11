@@ -30,8 +30,9 @@ public class RaceCompetitionSeasonEventController {
         return raceCompetitionSeasonEventService.fetchAllSeasonEvents(seasonSlug);
     }
 
-    @PostMapping("/season/event")
-    public RaceCompetitionSeasonEventResponseDto createSeasonEvent(@RequestBody RaceCompetitionSeasonEventRequest event) {
+    @PostMapping("/season/{seasonSlug}/event")
+    public RaceCompetitionSeasonEventResponseDto createSeasonEvent(@RequestBody RaceCompetitionSeasonEventRequest event, @PathVariable String seasonSlug) {
+        System.out.print(seasonSlug);
         return raceCompetitionSeasonEventService.createSeasonEvent(event);
     }
 }
