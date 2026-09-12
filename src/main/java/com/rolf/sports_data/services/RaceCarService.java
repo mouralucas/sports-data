@@ -11,7 +11,7 @@ import com.rolf.sports_data.repositories.RaceCarRepository;
 
 @Service 
 public class RaceCarService {
-    private RaceCarRepository raceCarRepository;
+    private final RaceCarRepository raceCarRepository;
 
     public RaceCarService(RaceCarRepository raceCarRepository) {
         this.raceCarRepository = raceCarRepository;

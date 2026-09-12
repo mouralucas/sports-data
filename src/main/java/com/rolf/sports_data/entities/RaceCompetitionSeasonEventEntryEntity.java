@@ -34,5 +34,37 @@ public class RaceCompetitionSeasonEventEntryEntity extends BaseEntity {
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "car_id")
-    private ConstructorEntity car;
+    private RaceCarEntity car;
+
+    public RaceCompetitionSeasonEventEntity getEvent() {
+        return event;
+    }
+
+    public void setEvent(RaceCompetitionSeasonEventEntity event) {
+        this.event = event;
+    }
+
+    public ParticipantEntity getParticipant() {
+        return participant;
+    }
+
+    public void setParticipant(ParticipantEntity participant) {
+        this.participant = participant;
+    }
+
+    public ConstructorEntity getConstructor() {
+        return constructor;
+    }
+
+    public void setConstructor(ConstructorEntity constructor) {
+        this.constructor = constructor;
+    }
+
+    public RaceCarEntity getCar() {
+        return car;
+    }
+
+    public void setCar(RaceCarEntity car) {
+        this.car = car;
+    }
 }

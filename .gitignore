@@ -148,4 +148,7 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 
+### Remove idea folder
+.idea/
+
 # End of https://www.toptal.com/developers/gitignore/api/java,visualstudiocode,macos,windows,linux,gradle

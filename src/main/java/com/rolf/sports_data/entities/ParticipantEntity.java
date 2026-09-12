@@ -14,14 +14,17 @@ import jakarta.persistence.Table;
 @Table(name = "participant")
 public class ParticipantEntity extends BaseEntity {
 
-    
+    public ParticipantEntity() {
+    }
+
     public ParticipantEntity(ParticipantTypeEnum participantType, String name, String shortName,
-            String acronym, LocationEntity countryLocation, boolean status) {
+                             String acronym, LocationEntity countryLocation, boolean status) {
         this.participantType = participantType;
         this.name = name;
         this.shortName = shortName;
         this.acronym = acronym;
     }
+
     /*
         Participant can only be a person. So change this logic to accept all kind of people.
         A participant can be a driver, player or any other kind of person.

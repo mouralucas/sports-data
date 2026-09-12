@@ -22,4 +22,9 @@ public class ConstructorService {
 
         return ConstructorMapper.toListResponse(constructors);
     }
+
+    public ConstructorResponseDto fetchConstructorById(Long id) {
+        ConstructorEntity constructor = constructorRepository.getReferenceById(id);
+        return ConstructorMapper.toResponse(constructor);
+    }
 }
