@@ -1,7 +1,6 @@
 package com.rolf.sports_data.services;
 
 import com.rolf.sports_data.dto.raceCompetitonSeasonEventEntry.RaceCompetitionSeasonEventEntryResponseDto;
-import com.rolf.sports_data.entities.RaceCompetitionSeasonEventEntity;
 import com.rolf.sports_data.entities.RaceCompetitionSeasonEventEntryEntity;
 import com.rolf.sports_data.mappers.RaceCompetitionSeasonEventEntryMapper;
 import com.rolf.sports_data.repositories.RaceCompetitionSeasonEventEntryRepository;

@@ -18,7 +18,7 @@ public class ParticipantEntity extends BaseEntity {
     }
 
     public ParticipantEntity(ParticipantTypeEnum participantType, String name, String shortName,
-                             String acronym, LocationEntity countryLocation, boolean status) {
+                             String acronym) {
         this.participantType = participantType;
         this.name = name;
         this.shortName = shortName;

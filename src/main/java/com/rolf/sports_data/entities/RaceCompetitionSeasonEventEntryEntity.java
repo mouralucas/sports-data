@@ -1,16 +1,10 @@
 package com.rolf.sports_data.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 
 /**
  * RaceCompetitionSeasonEventEntryEntity
- * 
  * A entry should be for every lower granularity, that means the pilot.
  * If a constructor have more than one pilot will appear more than once. The same
  *  apply to a car, if more than one pilot the car will appear more than once

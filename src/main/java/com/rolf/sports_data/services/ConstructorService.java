@@ -11,13 +11,13 @@ import com.rolf.sports_data.repositories.ConstructorRepository;
 
 @Service 
 public class ConstructorService {
-    private ConstructorRepository constructorRepository;
+    private final ConstructorRepository constructorRepository;
 
     public ConstructorService(ConstructorRepository constructorRepository) {
         this.constructorRepository = constructorRepository;
     }
 
-    public List<ConstructorResponseDto> fetchAllContructors() {
+    public List<ConstructorResponseDto> fetchAllConstructors() {
         List<ConstructorEntity> constructors = constructorRepository.findAll();
 
         return ConstructorMapper.toListResponse(constructors);
