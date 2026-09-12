@@ -33,6 +33,6 @@ public class RaceCompetitionSeasonEventController {
     @PostMapping("/season/{seasonSlug}/event")
     public RaceCompetitionSeasonEventResponseDto createSeasonEvent(@RequestBody RaceCompetitionSeasonEventRequest event, @PathVariable String seasonSlug) {
         System.out.print(seasonSlug);
-        return raceCompetitionSeasonEventService.createSeasonEvent(event);
+        return raceCompetitionSeasonEventService.createSeasonEvent(event, seasonSlug);
     }
 }

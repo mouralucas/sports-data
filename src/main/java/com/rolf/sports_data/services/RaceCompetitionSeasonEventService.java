@@ -2,6 +2,7 @@ package com.rolf.sports_data.services;
 
 import java.util.List;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,8 @@ import com.rolf.sports_data.repositories.RaceCompetitionSeasonRepository;
 
 @Service
 public class RaceCompetitionSeasonEventService {
-    private RaceCompetitionSeasonEventRepository raceCompetitionSeasonEventRepository;
-    private RaceCompetitionSeasonRepository raceCompetitionSeasonRepository;
+    private final RaceCompetitionSeasonEventRepository raceCompetitionSeasonEventRepository;
+    private final RaceCompetitionSeasonRepository raceCompetitionSeasonRepository;
 
     @Autowired
     public RaceCompetitionSeasonEventService(
@@ -33,11 +34,15 @@ public class RaceCompetitionSeasonEventService {
         return RaceCompetitionSeasonEventMapper.toListResponse(events);
     }
 
-    public RaceCompetitionSeasonEventResponseDto createSeasonEvent(RaceCompetitionSeasonEventRequest event) {
+    public RaceCompetitionSeasonEventResponseDto createSeasonEvent(RaceCompetitionSeasonEventRequest event, String seasonSlug) {
         RaceCompetitionSeasonEventEntity newEvent = RaceCompetitionSeasonEventMapper.toEntity(event);
 
         RaceCompetitionSeasonEntity season = raceCompetitionSeasonRepository
-                .getReferenceById(event.getRaceCompetitionSeasonId());
+                .findBySlug(seasonSlug)
+                .orElseThrow(() -> new EntityNotFoundException(
+                        "Season not found: " + seasonSlug
+                ));
+
         newEvent.setCompetitionSeason(season);
 
         RaceCompetitionSeasonEventEntity savedEvent = raceCompetitionSeasonEventRepository.save(newEvent);

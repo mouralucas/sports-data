@@ -27,9 +27,7 @@ public class ParticipantMapper {
                 dto.getParticipantType(),
                 dto.getName(),
                 dto.getShortName(),
-                dto.getAcronym(),
-                null,
-                true
+                dto.getAcronym()
         );
     }
 }
