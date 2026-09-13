@@ -3,8 +3,12 @@ package com.rolf.sports_data.controllers;
 import java.util.List;
 
 import com.rolf.sports_data.dto.RaceCompetitionSeasonEventSession.RaceCompetitionSeasonEventSessionResponseDto;
+import com.rolf.sports_data.dto.RaceCompetitionSeasonEventSessionResult.RaceCompetitionSeasonEventSessionResultCreateRequest;
+import com.rolf.sports_data.dto.RaceCompetitionSeasonEventSessionResult.RaceCompetitionSeasonEventSessionResultResponseDto;
 import com.rolf.sports_data.dto.raceCompetitonSeasonEventEntry.RaceCompetitionSeasonEventEntryResponseDto;
+import com.rolf.sports_data.mappers.RaceCompetitionSeasonEventSessionResultMapper;
 import com.rolf.sports_data.services.RaceCompetitionSeasonEventEntryService;
+import com.rolf.sports_data.services.RaceCompetitionSeasonEventSessionResultService;
 import com.rolf.sports_data.services.RaceCompetitionSeasonEventSessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,16 +29,19 @@ public class RaceCompetitionSeasonEventController {
     private final RaceCompetitionSeasonEventService raceCompetitionSeasonEventService;
     private final RaceCompetitionSeasonEventEntryService raceCompetitionSeasonEventEntryService;
     private final RaceCompetitionSeasonEventSessionService raceCompetitionSeasonEventSessionService;
+    private final RaceCompetitionSeasonEventSessionResultService raceCompetitionSeasonEventSessionResultService;
 
     @Autowired
     public RaceCompetitionSeasonEventController(
             RaceCompetitionSeasonEventService raceCompetitionSeasonEventService,
             RaceCompetitionSeasonEventEntryService raceCompetitionSeasonEventEntryService,
-            RaceCompetitionSeasonEventSessionService raceCompetitionSeasonEventSessionService
+            RaceCompetitionSeasonEventSessionService raceCompetitionSeasonEventSessionService,
+            RaceCompetitionSeasonEventSessionResultService raceCompetitionSeasonEventSessionResultService
     ) {
         this.raceCompetitionSeasonEventService = raceCompetitionSeasonEventService;
         this.raceCompetitionSeasonEventEntryService = raceCompetitionSeasonEventEntryService;
         this.raceCompetitionSeasonEventSessionService = raceCompetitionSeasonEventSessionService;
+        this.raceCompetitionSeasonEventSessionResultService = raceCompetitionSeasonEventSessionResultService;
     }
 
     // Events
@@ -59,5 +66,15 @@ public class RaceCompetitionSeasonEventController {
     @GetMapping("/event/{eventId}/sessions")
     public List<RaceCompetitionSeasonEventSessionResponseDto> findAllSessions(@PathVariable Long eventId) {
         return raceCompetitionSeasonEventSessionService.fetchAllSessionsByEvent(eventId);
+    }
+
+    // Event session results
+    @PostMapping("/event/{eventId}/session/{sessionId}/result")
+    public RaceCompetitionSeasonEventSessionResultResponseDto createResult(
+            @RequestBody RaceCompetitionSeasonEventSessionResultCreateRequest result,
+            @PathVariable Long eventId,
+            @PathVariable Long sessionId
+    ) {
+        return raceCompetitionSeasonEventSessionResultService.createSessionResult(result);
     }
 }

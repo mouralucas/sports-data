@@ -21,7 +21,7 @@ public class RaceCompetitionSeasonEventEntryEntity extends BaseEntity {
     @JoinColumn(name = "participant_id", nullable = false)
     private ParticipantEntity participant;
 
-    // Contructor already present on car, but duplicated here to simplify queries
+    // Constructor already present on car, but duplicated here to simplify queries
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "constructor_id")
     private ConstructorEntity constructor;
